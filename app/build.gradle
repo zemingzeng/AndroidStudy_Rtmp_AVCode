@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.zzm.play"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        externalNativeBuild{
+            cmake{
+                //abiFilters "arm64-v8a" , "armeabi-v7a"
+                abiFilters "arm64-v8a"
+            }
+        }
+
+    }
+
+    //让as认为是native
+    externalNativeBuild{
+        cmake{
+            path 'src/main/jni/CMakeLists.txt'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.3.6'
+
+
+    /////////////////////////////////////////////////////////////module 依赖
+    implementation project(path: ':shopping')
+    implementation project(path: ':game')
+    //router
+    implementation project(path: ':router')
+    implementation project(path: ':router_annotation')
+    annotationProcessor project(path: ':annotation_process')
+    
+
+    ///////////////////////////////third tools/////////////////////////////////////////////////
+    //ok http
+    implementation("com.squareup.okhttp3:okhttp:3.14.9")
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+}

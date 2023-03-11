@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/App/AndroidStudio/SDK/platforms/android-30/data/res/layout/auto_complete_list.xml" value="0.29739583333333336" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/drawable/splash_background.xml" value="0.13177083333333334" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/aa.xml" value="0.18115942028985507" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/activity_main1.xml" value="0.1" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/componentization_activity_layout.xml" value="0.18743667679837892" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/db_activity_layout.xml" value="0.18" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/ioc_activity_layout.xml" value="0.29438405797101447" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/plugin_activity_layout.xml" value="0.18743667679837892" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/rtmp_activity_layout.xml" value="0.29438405797101447" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/app/src/main/res/layout/test_layout.xml" value="0.1" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/game/src/main/res/layout/componentization_game_activity_layout.xml" value="0.11944444444444445" />
+        <entry key="..\:/Files/Project/AndroidStudio/Play/shopping/src/main/res/layout/componentization_shopping_activity_layout.xml" value="0.11944444444444445" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

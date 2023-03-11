@@ -1,0 +1,9 @@
+include ':app'
+rootProject.name = "Play"
+include ':java_test'
+include ':shopping'
+include ':game'
+include ':router_annotation'
+include ':annotation_process'
+include ':router'
+include ':third_plugin'

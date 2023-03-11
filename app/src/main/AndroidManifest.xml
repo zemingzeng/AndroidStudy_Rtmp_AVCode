@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zzm.play">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--        android:requestLegacyExternalStorage="true"-->
+
+    <!--    google play拿来用来判断是否可以下载此app-->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/App_Theme">
+        <activity
+            android:name=".x264.MyActivity"
+            android:theme="@style/Activity_Theme">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zzm.game.MainActivity" />
+        <activity android:name="com.zzm.shopping.MainActivity" />
+
+        <!--    android:process=": "中的“：”代表包名拼接在进程名前面构成进程名（com.zzm.play:MyService） -->
+        <!--1.adb shell 2.ps -A| grep "com.zzm*" 这两个步骤来查看当前运行线程-->
+        <service
+            android:name=".service.RemoteService"
+            android:exported="true"
+            android:process=":MyService"></service>
+    </application>
+
+</manifest>

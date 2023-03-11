@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updateXml>
+
+    <!---数据库升级6步骤-->
+    <!--1.备份数据库-->java file copy
+    <!--2.更改备份表名-->
+    <!--3.创建新结构表-->
+    <!--4.把备份表中数据迁移到新表-->
+    <!--5.删除备份表-->
+    <!--6.删除备份文件-->java file
+
+    <!--zeming为zemingzeng.db中的需要升级的表的表名-->
+
+    <!--新版本号-->
+    <createVersion version="v007">
+        <createNewTable dbName="zemingzeng.db">
+            <sql_createTable>
+               <!-- 创建新表 -->
+                create table if not exists zeming (name TEXT , age INT);
+            </sql_createTable>
+        </createNewTable>
+    </createVersion>
+
+    <!--旧版本们到新版本的升级内容相同的升级：v001，v003版本到最新v007版本的升级内容相同-->
+    <updateStep versionFrom="v001,v003" versionTo="v007">
+        <updateDb dbName="zemingzeng.db">
+            <!--先执行sql_before然后执行sql_createTable最后执行sql_after-->
+            <sql_before>
+                <!--修改备份表名-->
+                alter table zeming rename to backup_zeming
+            </sql_before>
+            <sql_after>
+                <!--迁移数据-->
+                insert into zeming(name,age) select name,age from backup_zeming;
+            </sql_after>
+            <sql_after>
+                <!--删除备份表-->
+                drop table if exists backup_zeming;
+            </sql_after>
+        </updateDb>
+    </updateStep>
+
+</updateXml>
